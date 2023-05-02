@@ -29,7 +29,7 @@ impl RedisSink {
 
 #[async_trait]
 impl Sink<Record> for RedisSink {
-    async fn connect(self, _offset: Option<Offset>) -> Result<LocalBoxSink<String>> {
+    async fn connect(self, _offset: Option<Offset>) -> Result<LocalBoxSink<Record>> {
         info!("Connecting to Redis");
         let client = redis::Client::open(self.url.as_str())?;
         let mut con = client.get_async_connection().await?;

@@ -2,7 +2,7 @@ meta:
   version: 0.1.0
   name: my-redis-connector-sink-test-connector
   type: redis-connector-sink-sink
-  topic: test-redis-connector-sink-topic
+  topic: hackernews
 redis:
   url:
     secret:
