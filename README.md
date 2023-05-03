@@ -4,6 +4,24 @@ The connector dump records (assumed JSON, see fluvio smart modules) from fluvio 
 
 to run locally using local redis installation 
 
+## Install Fluvio and Fluvio Connector Development Kit (CDK)
+Install fluvio:
+```
+curl -fsS https://packages.fluvio.io/v1/install.sh | bash
+```
+following tutorial [here](https://www.fluvio.io/connectors/cdk/overview/) install CDK
+```
+fluvio install cdk
+```
+
+## Build connector 
+
+Build connector:
+```
+cdk build
+```
+
+## Run connector
 ```
 RUST_BACKTRACE=1 cdk test -c config-example.yaml --secrets secrets.txt
 ```
@@ -33,3 +51,5 @@ redis:
       name: "REDIS_URL"
 ```
 if you want to listen to the topic different to hackers news 
+
+Follow up [quickstart](https://www.fluvio.io/connectors/cdk/overview/) to build you own connector 
