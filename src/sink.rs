@@ -4,6 +4,8 @@ use async_trait::async_trait;
 
 use fluvio::Offset;
 use fluvio::consumer::Record;
+use fluvio::dataplane::Encoder;
+use fluvio::dataplane::Version;
 use fluvio_connector_common::{Sink, LocalBoxSink, 
     tracing::{debug, error, info}
 };
@@ -35,8 +37,11 @@ impl Sink<Record> for RedisSink {
         let mut con = client.get_async_connection().await?;
         info!("Connected to Redis");
         let unfold = futures::sink::unfold(con, |mut con, record: Record| async move {
-
-            let key = record.timestamp().to_string();
+            let key = if let Some(key) = record.key() {
+                String::from_utf8_lossy(key).to_string()
+            }else{
+                record.timestamp().to_string()
+            };
             let value = String::from_utf8_lossy(record.value());
             con.json_set(key, "$".to_string(), &value).await?;
             Ok::<_, anyhow::Error>(con)
