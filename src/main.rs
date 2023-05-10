@@ -4,9 +4,9 @@ use config::RedisConfig;
 
 use sink::RedisSink;
 
-use fluvio_connector_common::{connector, consumer::ConsumerStream, Result};
-use fluvio_connector_common::Sink;
 use fluvio::consumer::Record;
+use fluvio_connector_common::Sink;
+use fluvio_connector_common::{connector, consumer::ConsumerStream, Result};
 use futures::SinkExt;
 
 #[connector(sink)]
@@ -20,4 +20,3 @@ async fn start(config: RedisConfig, mut stream: impl ConsumerStream) -> Result<(
     }
     Ok(())
 }
-

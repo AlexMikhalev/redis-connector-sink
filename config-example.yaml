@@ -8,4 +8,4 @@ redis:
   url:
     secret:
       name: "REDIS_URL"
-  to_hash: true
+  to_hash: false
