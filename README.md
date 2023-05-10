@@ -46,9 +46,11 @@ meta:
   type: redis-connector-sink-sink
   topic: hackernews
 redis:
+  prefix: hackernews
   url:
     secret:
       name: "REDIS_URL"
+  to_hash: false
 ```
 if you want to listen to the topic different to hackers news 
 
