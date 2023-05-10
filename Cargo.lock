@@ -2172,8 +2172,6 @@ dependencies = [
  "fluvio",
  "fluvio-connector-common",
  "futures",
- "itertools",
- "once_cell",
  "redis",
  "serde",
  "serde_json",
