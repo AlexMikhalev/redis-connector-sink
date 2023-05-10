@@ -4,6 +4,8 @@ meta:
   type: redis-connector-sink-sink
   topic: hackernews
 redis:
+  prefix: hackernews
   url:
     secret:
       name: "REDIS_URL"
+  to_hash: false

@@ -9,3 +9,5 @@ VERSION
 .env
 .vscode/
 vendor/
+hub/redis-connector-sink-0.1.0.ipkg
+redis-connector-sink.log
