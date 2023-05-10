@@ -4,7 +4,6 @@ use config::RedisConfig;
 
 use sink::RedisSink;
 
-use fluvio::consumer::Record;
 use fluvio_connector_common::Sink;
 use fluvio_connector_common::{connector, consumer::ConsumerStream, Result};
 use futures::SinkExt;
