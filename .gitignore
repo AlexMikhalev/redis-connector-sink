@@ -1,0 +1,13 @@
+target/
+**/*.rs.bk
+.DS_Store
+.docker-cargo
+target-docker
+.idea/
+VERSION
+.scripts
+.env
+.vscode/
+vendor/
+hub/redis-connector-sink-0.1.0.ipkg
+redis-connector-sink.log
